@@ -9,24 +9,6 @@ def format_date(days=0):
 def is_related_by_keyword(title, summary, keywords):
         text = title.lower() + " " + summary.lower()
         return any(keyword.lower() in text for keyword in keywords)
-
-class arxiv_bs():
-    """
-    BeautifulSoup Version
-    """
-    def __init__(self) -> None:
-        self.url = "https://arxiv.org/list/cs/new"
-        super().__init__()
-
-    def read_newsubmission(self):
-        """
-        get new_submitted article information including: Title, Subjects, and Abstracts.
-        """
-        response = requests.get(self.link)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        title = soup.find('title').text
-        return title
-
 class arxiv_reader():
     """
     feedparser Version
