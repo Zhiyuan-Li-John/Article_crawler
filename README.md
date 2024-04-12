@@ -15,3 +15,4 @@ python crawler.py
 
 ## Result record
 all the match articles will be recorded in a txt file in the record folder.
+
